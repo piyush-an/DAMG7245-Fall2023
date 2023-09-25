@@ -1,0 +1,188 @@
+{
+  "data_asset_type": null,
+  "expectation_suite_name": "S3_NYC_Yellow_Taxi_Data_Asset_Expectation_Suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "VendorID"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "VendorID",
+        "value_set": [
+          1,
+          2
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "tpep_pickup_datetime"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "tpep_dropoff_datetime"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "store_and_fwd_flag",
+        "value_set": [
+          "Y",
+          "N"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_in_set",
+      "kwargs": {
+        "column": "payment_type",
+        "value_set": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "auto": true,
+        "column": "passenger_count",
+        "max_value": 8,
+        "min_value": 0,
+        "mostly": 1.0,
+        "strict_max": false,
+        "strict_min": false
+      },
+      "meta": {
+        "profiler_config": {
+          "class_name": "BaseRuleBasedProfiler",
+          "config_version": 1.0,
+          "module_name": "great_expectations.rule_based_profiler.rule_based_profiler",
+          "name": "expect_column_values_to_be_between",
+          "rules": [
+            {
+              "domain_builder": {
+                "class_name": "ColumnDomainBuilder",
+                "exclude_column_name_suffixes": null,
+                "exclude_column_names": null,
+                "exclude_semantic_types": null,
+                "include_column_name_suffixes": null,
+                "include_column_names": [
+                  "passenger_count"
+                ],
+                "include_semantic_types": null,
+                "module_name": "great_expectations.rule_based_profiler.domain_builder.column_domain_builder",
+                "semantic_type_filter_class_name": null,
+                "semantic_type_filter_module_name": null
+              },
+              "expectation_configuration_builders": [
+                {
+                  "class_name": "DefaultExpectationConfigurationBuilder",
+                  "column": "$domain.domain_kwargs.column",
+                  "condition": null,
+                  "expectation_type": "expect_column_values_to_be_between",
+                  "max_value": "$parameter.column_max_range_estimator.value[1]",
+                  "meta": {
+                    "profiler_details": {
+                      "column_max_range_estimator": "$parameter.column_max_range_estimator.details",
+                      "column_min_range_estimator": "$parameter.column_min_range_estimator.details"
+                    }
+                  },
+                  "min_value": "$parameter.column_min_range_estimator.value[0]",
+                  "module_name": "great_expectations.rule_based_profiler.expectation_configuration_builder.default_expectation_configuration_builder",
+                  "mostly": "$variables.mostly",
+                  "strict_max": "$variables.strict_max",
+                  "strict_min": "$variables.strict_min",
+                  "validation_parameter_builder_configs": [
+                    {
+                      "class_name": "NumericMetricRangeMultiBatchParameterBuilder",
+                      "enforce_numeric_metric": true,
+                      "estimator": "$variables.estimator",
+                      "evaluation_parameter_builder_configs": null,
+                      "false_positive_rate": "$variables.false_positive_rate",
+                      "include_estimator_samples_histogram_in_details": "$variables.include_estimator_samples_histogram_in_details",
+                      "metric_domain_kwargs": "$domain.domain_kwargs",
+                      "metric_multi_batch_parameter_builder_name": null,
+                      "metric_name": "column.min",
+                      "metric_value_kwargs": null,
+                      "module_name": "great_expectations.rule_based_profiler.parameter_builder",
+                      "n_resamples": "$variables.n_resamples",
+                      "name": "column_min_range_estimator",
+                      "quantile_bias_correction": "$variables.quantile_bias_correction",
+                      "quantile_bias_std_error_ratio_threshold": "$variables.quantile_bias_std_error_ratio_threshold",
+                      "quantile_statistic_interpolation_method": "$variables.quantile_statistic_interpolation_method",
+                      "random_seed": "$variables.random_seed",
+                      "reduce_scalar_metric": true,
+                      "replace_nan_with_zero": true,
+                      "round_decimals": "$variables.round_decimals",
+                      "truncate_values": "$variables.truncate_values"
+                    },
+                    {
+                      "class_name": "NumericMetricRangeMultiBatchParameterBuilder",
+                      "enforce_numeric_metric": true,
+                      "estimator": "$variables.estimator",
+                      "evaluation_parameter_builder_configs": null,
+                      "false_positive_rate": "$variables.false_positive_rate",
+                      "include_estimator_samples_histogram_in_details": "$variables.include_estimator_samples_histogram_in_details",
+                      "metric_domain_kwargs": "$domain.domain_kwargs",
+                      "metric_multi_batch_parameter_builder_name": null,
+                      "metric_name": "column.max",
+                      "metric_value_kwargs": null,
+                      "module_name": "great_expectations.rule_based_profiler.parameter_builder",
+                      "n_resamples": "$variables.n_resamples",
+                      "name": "column_max_range_estimator",
+                      "quantile_bias_correction": "$variables.quantile_bias_correction",
+                      "quantile_bias_std_error_ratio_threshold": "$variables.quantile_bias_std_error_ratio_threshold",
+                      "quantile_statistic_interpolation_method": "$variables.quantile_statistic_interpolation_method",
+                      "random_seed": "$variables.random_seed",
+                      "reduce_scalar_metric": true,
+                      "replace_nan_with_zero": true,
+                      "round_decimals": "$variables.round_decimals",
+                      "truncate_values": "$variables.truncate_values"
+                    }
+                  ]
+                }
+              ],
+              "parameter_builders": [],
+              "variables": {
+                "estimator": "exact",
+                "include_estimator_samples_histogram_in_details": false,
+                "mostly": 1.0,
+                "round_decimals": null,
+                "strict_max": false,
+                "strict_min": false,
+                "truncate_values": {
+                  "lower_bound": null,
+                  "upper_bound": null
+                }
+              }
+            }
+          ],
+          "variables": {}
+        }
+      }
+    }
+  ],
+  "ge_cloud_id": null,
+  "meta": {
+    "great_expectations_version": "0.17.19"
+  }
+}
