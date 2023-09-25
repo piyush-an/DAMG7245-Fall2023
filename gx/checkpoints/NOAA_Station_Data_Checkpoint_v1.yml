@@ -1,0 +1,24 @@
+name: NOAA_Station_Data_Checkpoint_v1
+config_version: 1.0
+template_name:
+module_name: great_expectations.checkpoint
+class_name: Checkpoint
+run_name_template: '%Y%m%d-%H%M%S-Manual_Run'
+expectation_suite_name: NOAA_Station_Data_Expectation_Suite
+batch_request:
+  datasource_name: SQL_DB_Postgres
+  data_asset_name: noaa_station_data
+  options: {}
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction
+evaluation_parameters: {}
+runtime_configuration: {}
+validations: []
+profilers: []
+ge_cloud_id:
+expectation_suite_ge_cloud_id:

@@ -1,0 +1,33 @@
+name: S3_NYC_Yellow_Taxi_Checkpoint_v1
+config_version: 1.0
+template_name:
+module_name: great_expectations.checkpoint
+class_name: Checkpoint
+run_name_template:
+expectation_suite_name:
+batch_request: {}
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: store_evaluation_params
+    action:
+      class_name: StoreEvaluationParametersAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction
+evaluation_parameters: {}
+runtime_configuration: {}
+validations:
+  - batch_request:
+      datasource_name: S3_NYC_Yellow_Taxi2
+      data_asset_name: S3_NYC_Yellow_Taxi_Data_Asset2
+      options:
+        path: yellow_tripdata_2023-01.csv
+        year: '2023'
+        month: '01'
+      batch_slice:
+    expectation_suite_name: S3_NYC_Yellow_Taxi_Data_Asset_Expectation_Suite
+profilers: []
+ge_cloud_id:
+expectation_suite_ge_cloud_id:
