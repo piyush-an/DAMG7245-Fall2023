@@ -7,11 +7,11 @@ name = "pypi"
 fastapi = "*"
 pandas = "*"
 gunicorn = "*"
+uvicorn = "*"
 
 [dev-packages]
 pytest-cov = "*"
 httpx = "*"
-uvicorn = "*"
 
 [requires]
 python_version = "3.12"
