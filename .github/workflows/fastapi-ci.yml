@@ -1,0 +1,35 @@
+name: fastapi-ci # TODO: change to your workflow name
+
+on:  
+  push:
+    paths:
+      - 'fastapi/**' # TODO: change to your path
+
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - 
+        name: Checkout
+        uses: actions/checkout@v3
+      - 
+        id: commit
+        uses: pr-mpt/actions-commit-hash@v2
+      - 
+        name: Set up Python 3.12
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'  # TODO: change to your python version
+      - 
+        name: Install pipenv
+        run: pip install pipenv
+      - 
+        name: Run tests
+        working-directory: ./fastapi # TODO: change to your pytest path
+        run: |
+          pipenv install --dev 
+          pipenv run coverage run -m pytest -v .
+          pipenv run coverage report -m
+        # pipenv install -r requirements.txt
+        # To run the pytest without coverage report
+        # pipenv run pytest -v .
