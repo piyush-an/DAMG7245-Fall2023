@@ -9,9 +9,9 @@ pandas = "*"
 gunicorn = "*"
 
 [dev-packages]
-uvicorn = "*"
 pytest-cov = "*"
 httpx = "*"
+uvicorn = "*"
 
 [requires]
 python_version = "3.12"
