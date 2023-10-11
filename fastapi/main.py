@@ -22,7 +22,7 @@ def load_df():
 
 @app.get("/api/v1/healthcheck")
 async def say_hello() -> dict:
-    return {"message":"Ok"}
+    return {"message":"Okay"}
 
 @app.get("/")
 async def root():
