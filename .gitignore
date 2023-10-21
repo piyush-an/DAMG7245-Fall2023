@@ -160,5 +160,3 @@ cython_debug/
 #.idea/
 streamlit/.streamlit
 *.csv
-docs
-gx_support
