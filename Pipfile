@@ -5,6 +5,9 @@ name = "pypi"
 
 [packages]
 mkdocs-material = "*"
+pymdown-extensions = "*"
+mkdocs-git-authors-plugin = "*"
+mkdocs-glightbox = "*"
 
 [dev-packages]
 

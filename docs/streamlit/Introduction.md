@@ -1,6 +1,14 @@
-## Introduction to Streamlit
+---
+tags:
+  - Streamlit
+icon: simple/streamlit
+---
 
-Streamlit is an open-source Python library that makes it incredibly easy to create web applications for data science and machine learning projects. It's designed for data professionals, engineers, and developers who want to quickly turn data scripts into shareable web apps.
+# Streamlit
+
+## Introduction
+
+  [**Streamlit**](https://streamlit.io/) is an open-source Python library that makes it incredibly easy to create web applications for data science and machine learning projects. It's designed for data professionals, engineers, and developers who want to quickly turn data scripts into shareable web apps.
 
 ## Why Streamlit?
 
@@ -55,9 +63,7 @@ Now that Streamlit is installed in your virtual environment, you can create your
 
 Here's an example of a basic Streamlit app:
 
-```python
-# main.py
-
+```python title="main.py"
 import streamlit as st
 
 st.title('My First Streamlit App')
@@ -98,8 +104,7 @@ When working on your Streamlit projects, it's important to follow best practices
 
 - **Use a `.gitignore` file:** To avoid accidentally committing sensitive information to your version control system, such as your Python virtual environment or files containing sensitive data, make sure to create and maintain a `.gitignore` file in your project directory. This file lists the files and directories that should be excluded from version control.
 
-    ```plaintext
-    # .gitignore
+    ```plaintext title=".gitignore"
     myenv/
     .env
     ```

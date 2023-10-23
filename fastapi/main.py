@@ -26,7 +26,7 @@ async def say_hello() -> dict:
 
 @app.get("/")
 async def root():
-    return {"message": "Hello World 2"}
+    return {"message": "Hello World"}
 
 @app.get("/api/v1/fetch_all_data")
 def fetch_data() -> JSONResponse:

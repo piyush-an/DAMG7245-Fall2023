@@ -1,3 +1,8 @@
+---
+tags:
+  - Streamlit
+  - Streamlit Cloud
+---
 # Deploying a Streamlit Application
 
 In this guide, we'll walk you through the process of deploying a Streamlit application from a GitHub repository to Streamlit Cloud. Streamlit Cloud is a platform that makes it easy to share your data apps with the world. Follow these steps to get your Streamlit app up and running in the cloud.
@@ -44,6 +49,8 @@ Once the deployment is complete, you'll receive a unique URL for your Streamlit 
 ### Step 7: Monitor and Update
 
 Streamlit Cloud allows you to monitor your deployed app's usage and performance. You can also easily update your app by pushing changes to your GitHub repository. Streamlit Cloud will automatically rebuild and redeploy your app with the latest changes.
+
+### Conclusion
 
 Congratulations! Your Streamlit application is now live on Streamlit Cloud and accessible to a global audience.
 
