@@ -6,6 +6,11 @@ from airflow.utils.dates import days_ago
 from airflow.models.param import Param
 from datetime import timedelta
 
+user_input = {
+    "datasource_url": Param(default="https://sample.pdf", type='string', minLength=5, maxLength=255),
+}
+
+
 dag = DAG(
     dag_id="sandbox",
     schedule="0 0 * * *",   # https://crontab.guru/
@@ -13,13 +18,14 @@ dag = DAG(
     catchup=False,
     dagrun_timeout=timedelta(minutes=60),
     tags=["labs", "damg7245"],
-    # params=user_input,
+    params=user_input,
 )
 
 def print_keys(**kwargs):
     print("-----------------------------")
     print(f"Your Secret key is: {os.getenv('OPENAI_KEY')}") # Donot print this anywhere, this is just for demo
     print("-----------------------------")
+    print(kwargs["params"]["datasource_url"])
 
 
 with dag:
