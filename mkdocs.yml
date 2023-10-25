@@ -148,9 +148,9 @@ nav:
     - Introduction: airflow/intro.md
     - Installation: airflow/install.md
     - First Dag: airflow/dag.md
-  # - Google Cloud:
-  #   - Introduction: gcp/Introduction.md
-  #   - Compute Engine: gcp/compute_engine.md
+  - Google Cloud:
+    - Introduction: gcp/Introduction.md
+    - Compute Engine: gcp/compute_engine.md
   - Blog:
     - blog/index.md
 
