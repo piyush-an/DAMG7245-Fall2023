@@ -151,6 +151,7 @@ nav:
   - Google Cloud:
     - Introduction: gcp/Introduction.md
     - Compute Engine: gcp/compute_engine.md
+    - Using Terraform: gcp/terraform.md
   - Blog:
     - blog/index.md
 
