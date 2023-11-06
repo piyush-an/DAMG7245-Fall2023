@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fastapi-service
+spec:
+  selector:
+    app: fastapi-app
+  ports:
+    - protocol: TCP
+      port: 8090  # The port on which the service will be accessible
+      targetPort: 80  # The port your FastAPI app is running on
+  type: LoadBalancer  # Use LoadBalancer type if you're on a cloud provider that supports it

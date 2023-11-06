@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: streamlit-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: streamlit-app
+  template:
+    metadata:
+      labels:
+        app: streamlit-app
+    spec:
+      containers:
+        - name: streamlit-container
+          image: anku22/full-stack-fe
+          ports:
+            - containerPort: 80
+          env:
+            - name: API_URL
+              value: "http://fastapi-service:8090"
+
+
+# docker tag streamlit:latest anku22/full-stack-be:latest
