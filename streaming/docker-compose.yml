@@ -1,0 +1,44 @@
+version: "3.6"
+services:
+  cassandra:
+    image: bitnami/cassandra:4.1
+    container_name: cassandra
+    ports:
+      - '7000:7000'
+      - '9042:9042'
+    volumes:
+      - 'cassandra_data:/bitnami'
+      - './cassandra/cassandra-setup.cql:/docker-entrypoint-initdb.d/init_script.cql'
+    environment:
+      - CASSANDRA_SEEDS=cassandra
+      - CASSANDRA_PASSWORD_SEEDER=yes
+      - CASSANDRA_PASSWORD=cassandra
+
+  cassandra-web:
+    image: markusgulden/cassandra-web:0.5.0
+    depends_on:
+    - cassandra
+    environment:
+      CASSANDRA_HOST_IPS: 172.18.0.2 # IP of cassandra container doesnot not support container name
+      CASSANDRA_PORT: 9042
+      CASSANDRA_USER: cassandra
+      CASSANDRA_PASSWORD: cassandra
+    ports:
+    - 3002:3000
+  
+  grafana:
+    build:
+      context: grafana
+    container_name: grafana
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+    ports:
+      - "3003:3000"
+    depends_on:
+      - cassandra
+
+
+volumes:
+  cassandra_data:

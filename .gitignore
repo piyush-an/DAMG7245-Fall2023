@@ -161,3 +161,8 @@ cython_debug/
 streamlit/.streamlit
 *.csv
 # docs/gcp
+
+
+/workspace/DAMG7245-Fall2023/streaming/kafka_2.13-3.6.0
+streaming/kafka_2.13-3.6.0.tgz
+/workspace/DAMG7245-Fall2023/streaming/spark

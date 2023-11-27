@@ -1,0 +1,6 @@
+kafka-python
+websocket-client
+finnhub-python
+avro-python3
+python-dotenv
+pyspark
