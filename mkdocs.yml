@@ -108,11 +108,20 @@ extra:
   social:
     - icon: fontawesome/brands/github 
       link: https://github.com/piyush-an/
-    - icon: fontawesome/brands/slack
-      link: https://join.slack.com/t/damg7245fall2023/shared_invite/zt-25hzwbt0l-~aflAFGuRwYm6iU5UZ13dg
+    # - icon: fontawesome/brands/slack
+    #   link: https://join.slack.com/t/damg7245fall2023/shared_invite/zt-25hzwbt0l-~aflAFGuRwYm6iU5UZ13dg
     - icon: material/school
       link: https://www.northeastern.edu/
-
+  analytics:
+    provider: google
+    property: G-V90JNR5TFS
+  consent:
+    title: Cookie consent
+    description: >- 
+      We use cookies to recognize your repeated visits and preferences, as well
+      as to measure the effectiveness of our documentation and whether users
+      find what they're searching for. With your consent, you're helping us to
+      make our documentation better.
 
 # Page tree
 nav:
